@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F7F7F7;
+  --primary: #006D77;
+  --accent: #FF6F61;
+  --card: #FFFFFF;
+  --muted: #E5E5E5;
+  --border: #D1D1D1;
+  --success: #4CAF50;
+  --warning: #FFA726;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+}
+
+.card {
+  @apply p-4 rounded-lg bg-card shadow-card border border-border;
+}
+
+.card:hover {
+  @apply shadow-lg transition-shadow duration-300;
+}
+
+@keyframes credit-flash {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.1); opacity: 0.3; }
+}
+
+.credit-flash {
+  animation: credit-flash 0.5s ease-in-out;
+}
